@@ -132,7 +132,9 @@
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,7 +159,13 @@
     <Compile Include="Models\Entities\TblMessage.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entities\TblProject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\TblService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\TblTestimonial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -385,9 +393,16 @@
     <Content Include="Views\Service\UpdateService.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\MessageDetails.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\AddProject.cshtml" />
+    <Content Include="Views\Project\UpdateProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
