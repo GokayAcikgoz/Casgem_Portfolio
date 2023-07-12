@@ -7,29 +7,29 @@ using System.Web.Mvc;
 
 namespace Casgem_Portfolio.Controllers
 {
-    public class FeatureController : Controller
+    [Authorize]
+    public class WhoAmIController : Controller
     {
         CasgemPortfolioEntities db = new CasgemPortfolioEntities();
         public ActionResult Index()
         {
-            var values = db.TblFeature.ToList();
+            var values = db.TblWhoAmI.ToList();
             return View(values);
         }
 
         [HttpGet]
-        public ActionResult UpdateFeature(int id)
+        public ActionResult UpdateWhoAmI(int id) 
         {
-            var value = db.TblFeature.Find(id);
+            var value = db.TblWhoAmI.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult UpdateFeature(TblFeature p)
+        public ActionResult UpdateWhoAmI(TblWhoAmI p)
         {
-            var value = db.TblFeature.Find(p.FeatureID);
-            value.FeatureID = p.FeatureID;
-            value.FeatureDescription = p.FeatureDescription;
-            value.FeatureImageURL = p.FeatureImageURL;
+            var value = db.TblWhoAmI.Find(p.WhoID);
+            value.Title = p.Title;
+            value.Description = p.Description;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -98,12 +98,16 @@ namespace Casgem_Portfolio.Controllers
 
         public PartialViewResult PartialVideo()
         {
+            ViewBag.title = db.TblVideo.Select(x => x.Title).FirstOrDefault();
+            ViewBag.description = db.TblVideo.Select(x => x.Description).FirstOrDefault();
+            ViewBag.video = db.TblVideo.Select(x => x.VideoFrame).FirstOrDefault();
             return PartialView();
         }
 
         public PartialViewResult PartialFooter()
         {
-            return PartialView();
+            var values = db.TblSocial.ToList();
+            return PartialView(values);
         }
 
     }
